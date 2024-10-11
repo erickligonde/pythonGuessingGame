@@ -1,0 +1,23 @@
+import random
+
+number = random.randint(1, 20)
+score = 5
+print("Welcome to the Guessing Game! Please guess the number that is anywhere from 1 to 20!")
+print("")
+guess = int(input("What is your number\n"))
+
+while guess != number and score > 0:
+    if guess > number:
+        print("Guess is too high")
+    elif guess < number:
+        print("Guess is too low")
+    score -= 1
+    print(f"Score: {score}")
+    print("")
+    if score > 0:  # Only ask for another guess if the player still has score left
+        guess = int(input("What is your number\n"))
+
+if score == 0:
+    print("You Lose")
+else:
+    print(f"Correct! The number is {number}!")
